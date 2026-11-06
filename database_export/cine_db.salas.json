@@ -1,0 +1,184 @@
+[{
+  "_id": {
+    "$oid": "6ae53166118d54609c90f0b2"
+  },
+  "cine_id": {
+    "$oid": "6ae53069118d54609c90f0ab"
+  },
+  "nombre": "Sala 1",
+  "tipo": "2D",
+  "filas": 3,
+  "asientos_por_fila": 4,
+  "capacidad": 12,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6ae531cf118d54609c90f0b4"
+  },
+  "cine_id": {
+    "$oid": "6ae53084118d54609c90f0ad"
+  },
+  "nombre": "Sala 1",
+  "tipo": "2D",
+  "filas": 3,
+  "asientos_por_fila": 4,
+  "capacidad": 12,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7d1"
+  },
+  "cine_id": {
+    "$oid": "6ae53069118d54609c90f0ab"
+  },
+  "nombre": "Sala 1",
+  "filas": 8,
+  "asientos_por_fila": 10,
+  "capacidad": 80,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d2"
+  },
+  "cine_id": {
+    "$oid": "6ae53069118d54609c90f0ab"
+  },
+  "nombre": "Sala 2",
+  "filas": 10,
+  "asientos_por_fila": 12,
+  "capacidad": 120,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d3"
+  },
+  "cine_id": {
+    "$oid": "6ae53069118d54609c90f0ab"
+  },
+  "nombre": "Sala 3",
+  "filas": 6,
+  "asientos_por_fila": 8,
+  "capacidad": 48,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d4"
+  },
+  "cine_id": {
+    "$oid": "6ae53084118d54609c90f0ad"
+  },
+  "nombre": "Sala 1",
+  "filas": 8,
+  "asientos_por_fila": 10,
+  "capacidad": 80,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d5"
+  },
+  "cine_id": {
+    "$oid": "6ae53084118d54609c90f0ad"
+  },
+  "nombre": "Sala 2",
+  "filas": 10,
+  "asientos_por_fila": 12,
+  "capacidad": 120,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d6"
+  },
+  "cine_id": {
+    "$oid": "6ae53084118d54609c90f0ad"
+  },
+  "nombre": "Sala 3",
+  "filas": 6,
+  "asientos_por_fila": 8,
+  "capacidad": 48,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d7"
+  },
+  "cine_id": {
+    "$oid": "6aed5dedc1d951c9926fe7cf"
+  },
+  "nombre": "Sala 1",
+  "filas": 8,
+  "asientos_por_fila": 10,
+  "capacidad": 80,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d8"
+  },
+  "cine_id": {
+    "$oid": "6aed5dedc1d951c9926fe7cf"
+  },
+  "nombre": "Sala 2",
+  "filas": 10,
+  "asientos_por_fila": 12,
+  "capacidad": 120,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7d9"
+  },
+  "cine_id": {
+    "$oid": "6aed5dedc1d951c9926fe7cf"
+  },
+  "nombre": "Sala 3",
+  "filas": 6,
+  "asientos_por_fila": 8,
+  "capacidad": 48,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7da"
+  },
+  "cine_id": {
+    "$oid": "6aed5dedc1d951c9926fe7d0"
+  },
+  "nombre": "Sala 1",
+  "filas": 8,
+  "asientos_por_fila": 10,
+  "capacidad": 80,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7db"
+  },
+  "cine_id": {
+    "$oid": "6aed5dedc1d951c9926fe7d0"
+  },
+  "nombre": "Sala 2",
+  "filas": 10,
+  "asientos_por_fila": 12,
+  "capacidad": 120,
+  "estado": "activa"
+},
+{
+  "_id": {
+    "$oid": "6aed5deec1d951c9926fe7dc"
+  },
+  "cine_id": {
+    "$oid": "6aed5dedc1d951c9926fe7d0"
+  },
+  "nombre": "Sala 3",
+  "filas": 6,
+  "asientos_por_fila": 8,
+  "capacidad": 48,
+  "estado": "activa"
+}]

@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "6ae52e63118d54609c90f0a8"
+  },
+  "titulo": "Interestelar",
+  "sinopsis": "Un grupo de exploradores busca un nuevo hogar para la humanidad.",
+  "duracion_minutos": 169,
+  "clasificacion": "B",
+  "generos": [
+    "Ciencia ficción",
+    "Drama"
+  ],
+  "idiomas_disponibles": [
+    "Español",
+    "Inglés"
+  ],
+  "poster_url": "https://ejemplo.com/interestelar.jpg",
+  "estado": "cartelera"
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7c4"
+  },
+  "titulo": "El origen",
+  "genero": "Ciencia ficción",
+  "duracion": 148,
+  "clasificacion": "B",
+  "sinopsis": "Un especialista en infiltrarse en los sueños recibe una misión imposible.",
+  "poster": "https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg"
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7c5"
+  },
+  "titulo": "Avatar: El camino del agua",
+  "genero": "Aventura",
+  "duracion": 192,
+  "clasificacion": "B",
+  "sinopsis": "Jake Sully y su familia enfrentan nuevas amenazas en Pandora.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7c6"
+  },
+  "titulo": "Spider-Man: Sin camino a casa",
+  "genero": "Acción",
+  "duracion": 148,
+  "clasificacion": "B",
+  "sinopsis": "Peter Parker enfrenta consecuencias inesperadas al intentar recuperar su identidad secreta.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7c7"
+  },
+  "titulo": "Coco",
+  "genero": "Animación",
+  "duracion": 105,
+  "clasificacion": "A",
+  "sinopsis": "Miguel viaja al mundo de los muertos para descubrir la historia de su familia.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7c8"
+  },
+  "titulo": "Intensamente 2",
+  "genero": "Animación",
+  "duracion": 96,
+  "clasificacion": "A",
+  "sinopsis": "Nuevas emociones llegan a la mente de Riley durante su adolescencia.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7c9"
+  },
+  "titulo": "Duna: Parte Dos",
+  "genero": "Ciencia ficción",
+  "duracion": 166,
+  "clasificacion": "B",
+  "sinopsis": "Paul Atreides se une a los fremen mientras enfrenta su destino en Arrakis.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7ca"
+  },
+  "titulo": "Oppenheimer",
+  "genero": "Drama",
+  "duracion": 180,
+  "clasificacion": "B15",
+  "sinopsis": "La historia del físico que dirigió el desarrollo de la primera bomba atómica.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7cb"
+  },
+  "titulo": "El conjuro",
+  "genero": "Terror",
+  "duracion": 112,
+  "clasificacion": "B15",
+  "sinopsis": "Dos investigadores paranormales ayudan a una familia aterrorizada por una presencia sobrenatural.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7cc"
+  },
+  "titulo": "Jurassic World",
+  "genero": "Aventura",
+  "duracion": 124,
+  "clasificacion": "B",
+  "sinopsis": "Un parque temático de dinosaurios enfrenta el escape de una criatura peligrosa.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7cd"
+  },
+  "titulo": "Batman: El caballero de la noche",
+  "genero": "Acción",
+  "duracion": 152,
+  "clasificacion": "B",
+  "sinopsis": "Batman enfrenta al Joker mientras intenta proteger Ciudad Gótica.",
+  "poster": ""
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7ce"
+  },
+  "titulo": "Super Mario Bros.: La película",
+  "genero": "Animación",
+  "duracion": 92,
+  "clasificacion": "A",
+  "sinopsis": "Mario viaja al Reino Champiñón para rescatar a su hermano Luigi.",
+  "poster": ""
+}]

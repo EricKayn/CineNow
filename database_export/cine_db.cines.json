@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "6ae53069118d54609c90f0ab"
+  },
+  "nombre": "Cine Centro",
+  "direccion": {
+    "calle": "Avenida Principal",
+    "ciudad": "Ciudad de México",
+    "estado": "CDMX"
+  },
+  "telefono": "5500000000",
+  "estado": "activo"
+},
+{
+  "_id": {
+    "$oid": "6ae53084118d54609c90f0ad"
+  },
+  "nombre": "Cine Plaza",
+  "direccion": {
+    "calle": "Avenida Central",
+    "ciudad": "Tecámac",
+    "estado": "Estado de México"
+  },
+  "telefono": "5500000001",
+  "estado": "activo"
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7cf"
+  },
+  "nombre": "Cine Universidad",
+  "direccion": "Coyoacán, Ciudad de México",
+  "ciudad": "Ciudad de México",
+  "estado": "activo"
+},
+{
+  "_id": {
+    "$oid": "6aed5dedc1d951c9926fe7d0"
+  },
+  "nombre": "Cine Reforma",
+  "direccion": "Paseo de la Reforma, Ciudad de México",
+  "ciudad": "Ciudad de México",
+  "estado": "activo"
+}]
