@@ -1,0 +1,563 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: #090d18;
+    color: #f5f7fb;
+    font: 15px Arial, sans-serif
+}
+
+header {
+    height: 72px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff18;
+    position: sticky;
+    top: 0;
+    background: #090d18ee;
+    z-index: 5
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none
+}
+
+.logo span {
+    color: #ff8065
+}
+
+nav {
+    display: flex;
+    gap: 28px
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+nav a {
+    color: #aab4c5
+}
+
+button,
+.primary {
+    border: 0;
+    border-radius: 9px;
+    padding: 12px 17px;
+    cursor: pointer;
+    font-weight: bold
+}
+
+button {
+    background: #263248;
+    color: white
+}
+
+.primary {
+    display: inline-block;
+    background: linear-gradient(110deg, #ff5949, #ff985b);
+    color: white
+}
+
+.primary:disabled {
+    opacity: .4;
+    cursor: not-allowed
+}
+
+.hero {
+    padding: 85px 9%;
+    min-height: 400px;
+    background: radial-gradient(ellipse at 80% 40%, #562c3d66, transparent 45%)
+}
+
+small {
+    color: #ff967b;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 11px
+}
+
+h1 {
+    font-size: clamp(40px, 6vw, 67px);
+    line-height: 1.05;
+    margin: 20px 0
+}
+
+h1 em {
+    color: #ff896d;
+    font-style: normal
+}
+
+.hero p {
+    color: #aab4c5;
+    margin-bottom: 28px
+}
+
+main>section:not(.hero) {
+    padding: 42px 9% 65px
+}
+
+h2 {
+    font-size: 34px;
+    margin: 10px 0 25px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 20px
+}
+
+.card,
+article,
+.purchase {
+    background: #131d2d;
+    border: 1px solid #ffffff15;
+    border-radius: 14px;
+    overflow: hidden
+}
+
+.card {
+    cursor: pointer
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #ff8065
+}
+
+.poster {
+    height: 260px;
+    background: linear-gradient(140deg, #273650, #111827);
+    display: grid;
+    place-items: center;
+    color: #ffffff33;
+    font-size: 55px
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.info {
+    padding: 15px
+}
+
+.info h3 {
+    margin: 0 0 8px
+}
+
+.muted,
+.info p {
+    color: #9ba8ba;
+    font-size: 12px
+}
+
+.heading,
+.summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 20px
+}
+
+article {
+    padding: 22px
+}
+
+article h3 {
+    margin-top: 0
+}
+
+.showtime {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 9px 0;
+    text-align: left;
+    background: #202c40
+}
+
+.showtime.active {
+    outline: 1px solid #ff8065
+}
+
+.screen {
+    margin: 25px auto;
+    width: 75%;
+    text-align: center;
+    border-top: 3px solid #ff8b70;
+    border-radius: 50%;
+    padding-top: 10px;
+    color: #9ba8ba;
+    font-size: 10px;
+    letter-spacing: 3px
+}
+
+.seatrow {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px
+}
+
+.seat {
+    padding: 8px;
+    width: 36px;
+    background: #17433b;
+    color: #a2f1d8;
+    font-size: 11px
+}
+
+.seat.selected {
+    background: #ff765d
+}
+
+.seat.occupied {
+    background: #3a4351;
+    color: #8792a3
+}
+
+.legend {
+    color: #9ba8ba;
+    text-align: center;
+    font-size: 11px;
+    margin: 20px
+}
+
+.summary {
+    border-top: 1px solid #ffffff20;
+    padding: 15px 0
+}
+
+.hidden {
+    display: none !important
+}
+
+footer {
+    border-top: 1px solid #ffffff18;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    color: #aab4c5
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: #000c;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+    padding: 18px
+}
+
+.modal {
+    width: min(440px, 100%);
+    padding: 30px;
+    background: #131d2d;
+    border: 1px solid #ffffff22;
+    border-radius: 16px;
+    position: relative
+}
+
+.modal h2 {
+    font-size: 28px
+}
+
+.modal label {
+    display: block;
+    margin: 14px 0;
+    color: #bbc5d3;
+    font-size: 13px
+}
+
+.modal input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    background: #090f1b;
+    border: 1px solid #38465b;
+    border-radius: 8px;
+    color: white
+}
+
+.modal form .primary,
+.modal>.primary {
+    width: 100%;
+    margin-top: 12px
+}
+
+.x {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 22px
+}
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin: 20px 0
+}
+
+.tabs button {
+    flex: 1
+}
+
+.notice {
+    background: #49351e;
+    color: #f2c88d;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.5
+}
+
+#toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #263248;
+    padding: 12px 20px;
+    border-radius: 9px;
+    display: none;
+    z-index: 20
+}
+
+#toast.show {
+    display: block
+}
+
+.purchase {
+    padding: 16px;
+    margin: 10px 0
+}
+
+@media(max-width:700px) {
+    header {
+        padding: 0 17px
+    }
+
+    nav {
+        display: none
+    }
+
+    .hero {
+        padding: 65px 25px
+    }
+
+    main>section:not(.hero) {
+        padding: 35px 20px
+    }
+
+    .columns {
+        grid-template-columns: 1fr
+    }
+
+    .poster {
+        height: 210px
+    }
+
+    footer {
+        padding: 22px;
+        gap: 10px;
+        flex-direction: column
+    }
+}
+
+
+#ticketList {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 320px), 1fr)
+  );
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.ticket-card {
+  background: #181820;
+  border: 1px solid #363640;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  border-bottom: 1px dashed #555560;
+}
+
+.ticket-brand {
+  display: block;
+  color: #ff967b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.ticket-header h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.ticket-status {
+  background: #263b30;
+  color: #a0e5b4;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.ticket-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  padding: 24px;
+}
+
+.ticket-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.ticket-details small,
+.ticket-footer small {
+  color: #aaaab5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ticket-details strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.ticket-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px;
+  background: #22222c;
+  border-top: 1px dashed #555560;
+}
+
+.ticket-footer strong {
+  color: #ff967b;
+  font-size: 15px;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .ticket-header,
+  .ticket-details,
+  .ticket-footer {
+    padding: 18px;
+  }
+
+  .ticket-header h3 {
+    font-size: 19px;
+  }
+}
+
+/* Pósters de la cartelera */
+.card .poster {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.card .poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-movie-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 20px 0 30px;
+}
+
+#bookingPoster {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+#bookingMovie {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .booking-movie-header {
+    gap: 14px;
+  }
+
+  #bookingPoster {
+    width: 90px;
+    height: 135px;
+  }
+}
+
+#dateSelector {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 16px;
+}
+
+.date-option {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 1px solid #34445e;
+  border-radius: 10px;
+  background: #202d43;
+  color: white;
+  cursor: pointer;
+}
+
+.date-option.active {
+  border-color: #ff785c;
+  background: #50352f;
+}
+
+#showtimeList {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 6px;
+}

@@ -1,0 +1,340 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CineNow</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+   
+    <!-- 1. ENCABEZADO -->
+   
+
+    <header>
+        <a class="logo" href="#">
+            Cine<span>Now</span>
+        </a>
+
+        <nav>
+            <a href="#cartelera">
+                Cartelera
+            </a>
+
+            <a href="#mis-compras" id="myPurchasesLink">
+                Mis compras
+            </a>
+
+            <a href="#mis-boletos" id="myTicketsLink">
+                Mis boletos
+            </a>
+        </nav>
+
+        <div>
+            <span id="userLabel"></span>
+
+            <button id="authButton">
+                Iniciar sesión
+            </button>
+        </div>
+    </header>
+
+   
+    <!-- 2. CONTENIDO PRINCIPAL -->
+   
+
+    <main>
+
+        <!-- PORTADA -->
+
+        <section class="hero">
+            <small>✦ TU CINE, A UN CLIC</small>
+
+            <h1>
+                Las mejores historias<br>
+                <em>se viven en pantalla grande.</em>
+            </h1>
+
+            <p>
+                Descubre tu próxima película,
+                elige tus asientos y prepárate
+                para disfrutar.
+            </p>
+
+            <a class="primary" href="#cartelera">
+                Explorar cartelera ↗
+            </a>
+        </section>
+
+        <!-- CARTELERA -->
+
+        <section id="cartelera">
+            <small>ENCUENTRA TU FUNCIÓN</small>
+
+            <h2>En cartelera</h2>
+
+            <div id="movieGrid" class="grid">
+                Cargando películas...
+            </div>
+        </section>
+
+        <!-- RESERVA -->
+
+        <section id="bookingSection" class="hidden">
+
+            <div class="heading">
+                <div>
+                    <small>RESERVA TU EXPERIENCIA</small>
+                    <h2 id="bookingTitle">
+                        Elige tu función
+                    </h2>
+                </div>
+
+                <button id="closeBooking">
+                    Cerrar ×
+                </button>
+            </div>
+
+            <div class="booking-movie-header">
+                <img id="bookingPoster" alt="Póster de la película">
+                <div id="bookingMovie"></div>
+            </div>
+
+            <div class="columns">
+
+                <!-- FUNCIONES -->
+
+                <article>
+                    <h3>1. Selecciona una función</h3>
+
+                    
+                    <div id="dateSelector"></div>
+                    <div id="showtimeList"></div>
+
+                </article>
+
+                <!-- ASIENTOS -->
+
+                <article>
+                    <h3>2. Elige tus asientos</h3>
+
+                    <div class="screen">
+                        PANTALLA
+                    </div>
+
+                    <div id="seatMap"></div>
+
+                    <p class="legend">
+                        🟩 Disponible　
+                        🟧 Seleccionado　
+                        ⬛ Ocupado
+                    </p>
+
+                    <div class="summary">
+                        <span id="selectedSeats">
+                            Ninguno
+                        </span>
+
+                        <strong id="bookingTotal">
+                            $0.00
+                        </strong>
+                    </div>
+
+                    <button
+                        id="continuePurchase"
+                        class="primary"
+                        disabled
+                    >
+                        Continuar con la compra
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- MIS COMPRAS -->
+
+        <section id="myPurchases" class="hidden">
+
+            <small>TU ACTIVIDAD</small>
+
+            <h2>Mis compras</h2>
+
+            <button id="refreshPurchases">
+                Actualizar
+            </button>
+
+            <div id="purchaseList"></div>
+        </section>
+
+        <!-- MIS BOLETOS -->
+
+        <section id="myTickets" class="hidden">
+
+            <small>TUS ENTRADAS AL CINE</small>
+
+            <h2> Mis boletos</h2>
+
+            <p>
+                Consulta tus boletos comprados,
+                asientos y códigos de acceso.
+            </p>
+
+            <button id="refreshTickets">
+                Actualizar boletos
+            </button>
+
+            <div id="ticketList">
+                Aquí aparecerán tus boletos.
+            </div>
+
+        </section>
+
+    </main>
+
+   
+    <!-- 3. PIE DE PÁGINA -->
+   
+
+    <footer>
+         CineNow
+
+        <span>
+            © 2026 · Hecho para disfrutar el cine.
+        </span>
+    </footer>
+
+   
+    <!-- 4. MODAL DE INICIO DE SESIÓN -->
+   
+
+    <div id="authModal" class="backdrop hidden">
+
+        <div class="modal">
+
+            <button
+                data-close="authModal"
+                class="x"
+            >
+                ×
+            </button>
+
+            <small>BIENVENIDO A CINENOW</small>
+
+            <h2 id="authTitle">
+                Inicia sesión
+            </h2>
+
+            <div class="tabs">
+                <button data-auth-tab="login">
+                    Iniciar sesión
+                </button>
+
+                <button data-auth-tab="register">
+                    Crear cuenta
+                </button>
+            </div>
+
+            <form id="authForm">
+
+                <label id="nameField" class="hidden">
+                    Nombre
+
+                    <input id="authName">
+                </label>
+
+                <label>
+                    Correo
+
+                    <input
+                        id="authEmail"
+                        type="email"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Contraseña
+
+                    <input
+                        id="authPassword"
+                        type="password"
+                        required
+                        minlength="6"
+                    >
+                </label>
+
+                <button
+                    id="authSubmit"
+                    class="primary"
+                >
+                    Entrar
+                </button>
+
+            </form>
+
+            <p id="authMessage"></p>
+
+        </div>
+    </div>
+
+   
+    <!-- 5. MODAL DE COMPRA -->
+   
+
+    <div id="checkoutModal" class="backdrop hidden">
+
+        <div class="modal">
+
+            <button
+                data-close="checkoutModal"
+                class="x"
+            >
+                ×
+            </button>
+
+            <small>RESUMEN DE TU COMPRA</small>
+
+            <h2>¡Ya casi es tuya!</h2>
+
+            <div id="checkoutSummary"></div>
+
+            <p class="notice">
+                Al confirmar, se registrará tu compra,
+                se realizará un pago simulado
+                y se generarán tus boletos.
+                No se realizará ningún cobro real.
+            </p>
+
+            <button
+                id="confirmPurchase"
+                class="primary"
+            >
+                Confirmar compra
+            </button>
+
+            <p id="checkoutMessage"></p>
+
+        </div>
+    </div>
+
+   
+    <!-- 6. NOTIFICACIONES -->
+   
+
+    <div id="toast"></div>
+
+   
+    <!-- 7. JAVASCRIPT -->
+   
+
+    <script src="app.js"></script>
+
+</body>
+</html>
