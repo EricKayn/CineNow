@@ -593,18 +593,46 @@ try {
       method: "POST"
     });
 
-    // PASO 3: GENERAR BOLETOS
-    etapa = "boletos";
-    message.textContent = "Generando boletos...";
+    // PASO 3: ESPERAR BOLETOS DE RABBITMQ
+etapa = "boletos";
 
-    const resultado = await api(
-      `/boletos/generar/${compraId}`,
-      {
-        method: "POST"
-      }
-    );
+message.textContent =
+  "Pago exitoso. Estamos generando tus boletos...";
 
-    console.log("Boletos generados:", resultado);
+let resultado = null;
+
+for (let intento = 0; intento < 30; intento++) {
+
+  resultado = await api(
+    `/boletos/generar/${compraId}`,
+    {
+      method: "POST"
+    }
+  );
+
+  if (resultado.estado === "disponibles") {
+    break;
+  }
+
+  await new Promise(
+    (resolve) => setTimeout(resolve, 1000)
+  );
+}
+
+if (resultado?.estado !== "disponibles") {
+
+  message.textContent =
+    "Tu pago fue exitoso. Tus boletos siguen procesándose. " +
+    "Podrás consultarlos en Mis boletos. No vuelvas a pagar.";
+
+  toast("Pago exitoso. Boletos pendientes.");
+
+  await chooseFunction(functionId);
+
+  return;
+}
+
+console.log("Boletos generados:", resultado);
 
     // PASO 4: CONFIRMAR EN PANTALLA
     message.textContent = "";
