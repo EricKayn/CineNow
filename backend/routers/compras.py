@@ -311,7 +311,8 @@ def pagar_compra(
             "$set": {
                 "estado": "pagada",
                 "pagada_en": ahora,
-                "metodo_pago": "simulado"
+                "metodo_pago": "simulado",
+                "evento_boletos_pendiente": True
             }
         }
     )

@@ -167,10 +167,10 @@ def obtener_boleto(
 
 
 
-# 5. GENERAR BOLETOS
+# 5. CONSULTAR BOLETOS DE UNA COMPRA
 
 
-@router.post("/generar/{compra_id}", status_code=201)
+@router.post("/generar/{compra_id}", status_code=200)
 def generar_boletos(
     compra_id: str,
     usuario: dict = Depends(usuario_actual)
@@ -180,7 +180,6 @@ def generar_boletos(
         "ID de compra"
     )
 
-    # Buscar compra del usuario
     compra = db["compras"].find_one({
         "_id": compra_oid,
         "usuario_id": usuario["_id"]
@@ -192,62 +191,32 @@ def generar_boletos(
             detail="Compra no encontrada."
         )
 
-    # Solo compras pagadas
     if compra.get("estado") != "pagada":
         raise HTTPException(
             status_code=400,
-            detail=(
-                "Solo se pueden generar boletos "
-                "de compras pagadas."
-            )
+            detail="La compra no está pagada."
         )
 
-    # Buscar boletos ya generados
-    existentes = list(db["boletos"].find({
-        "compra_id": compra_oid,
-        "usuario_id": usuario["_id"]
-    }))
-
-    asientos_existentes = {
-        boleto["asiento"]
-        for boleto in existentes
-    }
-
-    # Crear únicamente los boletos faltantes
-    nuevos = []
-
-    for asiento in compra["asientos"]:
-        if asiento in asientos_existentes:
-            continue
-
-        boleto = {
-            "compra_id": compra_oid,
-            "usuario_id": usuario["_id"],
-            "funcion_id": compra["funcion_id"],
-            "asiento": asiento,
-            "codigo": f"CN-{ObjectId()}",
-            "estado": "vigente",
-            "creado_en": datetime.now(timezone.utc)
-        }
-
-        nuevos.append(boleto)
-
-    # Insertar boletos faltantes
-    for boleto in nuevos:
-        try:
-            db["boletos"].insert_one(boleto)
-        except DuplicateKeyError:
-            # Otro proceso ya generó ese boleto.
-            pass
-
-    # Recuperar todos los boletos de la compra
     boletos = list(db["boletos"].find({
         "compra_id": compra_oid,
         "usuario_id": usuario["_id"]
     }))
 
+    disponibles = set(compra["asientos"]).issubset(
+        {boleto["asiento"] for boleto in boletos}
+    )
+
     return {
-        "mensaje": "Los boletos de la compra están disponibles.",
+        "mensaje": (
+            "Los boletos están disponibles."
+            if disponibles
+            else "Tus boletos se están generando."
+        ),
+        "estado": (
+            "disponibles"
+            if disponibles
+            else "procesando"
+        ),
         "total": len(boletos),
         "boletos": serializar_boletos(boletos)
     }
